@@ -15,17 +15,23 @@ Simple API to create different kinds of documents from an AJAX JSON API Call
 Example: 
 
 Get document by id (get whatever document is ID 51):
+
 `GET http://costigno.com/umbraco/api/DynamicDoc/GetDocument/51`
 
 Get all documents by name (get all documents named 'ProductPage'):
+
 `GET http://costigno.com/umbraco/api/DynamicDoc/GetAllDocumentsByName/ProductPage`
 
 Get documents by type alias (get all documents of type 'Product'):
+
 `GET http://costigno.com/umbraco/api/DynamicDoc/GetAllDocumentsByType/Product`
 
-Create or Edit Document (Create or update a Product)
+Create or Edit Document (Create or update a Product):
+
 `POST http://costigno.com/umbraco/api/DynamicDoc/PostDocument/Product?name=NewDoc&parentId=88&userId=0`
+
 POSTED JSON:
+```JavaScript
 {
 	"Id": "12", 	// Note: This is required if you wish to modify the document ratehr than create a new one.
 	"name": "NewDoc", // Note: Pass either here or in the URL
@@ -34,11 +40,14 @@ POSTED JSON:
 	"address1": "123 Fake Street",
 	"city": "Springfield"
 }
+```
 
-Create or Edit a Document (Create or update a Product Using the JSON structure from the GetDocument calls)
+Create or Edit a Document (Create or update a Product Using the JSON structure from the GetDocument calls):
+
 `PUT http://costigno.com/umbraco/api/DynamicDoc/PutDocument/Product?name=NewDoc&parentId=88&userId=0`
 
-Delete a document by id (Delete document with ID of 55)
+Delete a document by id (Delete document with ID of 55):
+
 `DELETE http://costigno.com/umbraco/api/DynamicDoc/DeleteDocument/55`
 
 That should do it!
