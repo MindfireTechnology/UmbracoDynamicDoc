@@ -8,3 +8,4 @@
 *.suo
 /bin/Release
 /obj/Release
+*.user
